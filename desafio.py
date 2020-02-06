@@ -23,11 +23,9 @@ data = request.json()
 
 with open('answer.json', 'w+') as f:
     json.dump(data, f, indent=2)
-f.close()
 
 with open('answer.json') as file:
     data = json.load(file)
-file.close()
 
 numero_casas = data['numero_casas']
 token = data['token']
@@ -39,8 +37,7 @@ with open('answer.json', 'w+') as file:
     json.dump(data, file, indent=2)
 file.close()
 
-
 with open('answer.json', 'rb') as f:
-    r = requests.post('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=7aef3030b2fe12bdb5f6000a00a09941f5c2ae3c', files={'answer.json': f})
+    r = requests.post('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=7aef3030b2fe12bdb5f6000a00a09941f5c2ae3c', files={'answer': f}, data={'file':'answer'})
 
 print(r.text)
