@@ -35,7 +35,6 @@ data['resumo_criptografico'] = hashlib.sha1(data['decifrado'].encode(encoding='U
 
 with open('answer.json', 'w+') as file:
     json.dump(data, file, indent=2)
-file.close()
 
 with open('answer.json', 'rb') as f:
     r = requests.post('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=7aef3030b2fe12bdb5f6000a00a09941f5c2ae3c', files={'answer': f}, data={'file':'answer'})
