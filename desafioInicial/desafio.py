@@ -17,12 +17,12 @@ def decifra(text, cases):
             l2 += l[i]
     return l2
 
-request = requests.get('https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=7aef3030b2fe12bdb5f6000a00a09941f5c2ae3c')
+#request = requests.get('https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=7aef3030b2fe12bdb5f6000a00a09941f5c2ae3c')
 
-data = request.json()
+#data = request.json()
 
-with open('answer.json', 'w+') as f:
-    json.dump(data, f, indent=2)
+#with open('answer.json', 'w+') as f:
+#    json.dump(data, f, indent=2)
 
 with open('answer.json') as file:
     data = json.load(file)
@@ -36,7 +36,7 @@ data['resumo_criptografico'] = hashlib.sha1(data['decifrado'].encode(encoding='U
 with open('answer.json', 'w+') as file:
     json.dump(data, file, indent=2)
 
-with open('answer.json', 'rb') as f:
-    r = requests.post('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=7aef3030b2fe12bdb5f6000a00a09941f5c2ae3c', files={'answer': f}, data={'file':'answer'})
+#with open('answer.json', 'rb') as f:
+#    r = requests.post('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=7aef3030b2fe12bdb5f6000a00a09941f5c2ae3c', files={'answer': f}, data={'file':'answer'})
 
-print(r.text)
+#print(r.text)
