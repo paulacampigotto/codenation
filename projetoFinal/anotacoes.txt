@@ -1,0 +1,30 @@
+https://www.postman.com/
+https://insomnia.rest/
+
+    São aplicativos em que vc digita a URL da API e pode definir todo o cabeçalho e o corpo da mensagem, podendo verificar qual é o retorno da aplicação.
+
+######3 Spring:
+
+    framework para criar aplicações web. 
+    Nele eu vou criar as rotas (url) e definir a lógica da API (por ex: se o cara colocou o token certo, retorna os logs (mensagens q dizem o q houve com o sistema) do programa).
+
+###### Gradle:
+
+    ferramenta pro java que gerencia pacotes e auxilia na compilação, utilizado para configurar o spring. 
+
+###### Heroku:
+
+    Site para fazer deploy (rodar o código no servidor). Te dá maquinas virtuais grátis, para rodar o código lá.
+
+##### JUnit:
+
+    Suite (framework) de testes (asserttrue, etc)   
+
+###### circleCI:
+
+    Tenho os testes e quero rodar eles. O circleCI se integra com o github e toda vez que faz um push ele roda os testes
+
+##### Swagger:
+
+    Parecido com o spring. tem ferramenta para ajudar a desenvolver a API de um jeito mais alto nível
+
