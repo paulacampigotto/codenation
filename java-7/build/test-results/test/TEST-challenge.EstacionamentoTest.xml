@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="challenge.EstacionamentoTest" tests="13" skipped="0" failures="2" errors="0" timestamp="2020-03-23T01:34:47" hostname="Dell-Inspiron" time="0.011">
+<testsuite name="challenge.EstacionamentoTest" tests="13" skipped="0" failures="2" errors="0" timestamp="2020-03-27T00:05:54" hostname="Dell-Inspiron" time="0.014">
   <properties/>
   <testcase name="naoDeveTerCarroAutonomo" classname="challenge.EstacionamentoTest" time="0.001"/>
-  <testcase name="casoTodosSejamSeniorONovoMotoristaNaoTeraVaga" classname="challenge.EstacionamentoTest" time="0.001"/>
+  <testcase name="casoTodosSejamSeniorONovoMotoristaNaoTeraVaga" classname="challenge.EstacionamentoTest" time="0.004"/>
   <testcase name="deveRetornarErroQuandoNaoTemCor" classname="challenge.EstacionamentoTest" time="0.0"/>
-  <testcase name="casoPrimeiroMotoristaSejaSeniorEleNaoDeveSair" classname="challenge.EstacionamentoTest" time="0.0"/>
-  <testcase name="naoDeveEstacionarMotoristaSemPontos" classname="challenge.EstacionamentoTest" time="0.001"/>
+  <testcase name="casoPrimeiroMotoristaSejaSeniorEleNaoDeveSair" classname="challenge.EstacionamentoTest" time="0.001"/>
+  <testcase name="naoDeveEstacionarMotoristaSemPontos" classname="challenge.EstacionamentoTest" time="0.0"/>
   <testcase name="deveRetorarErroQuandoPontosNegativos" classname="challenge.EstacionamentoTest" time="0.001"/>
   <testcase name="deveEstacionar" classname="challenge.EstacionamentoTest" time="0.0"/>
   <testcase name="deveRetorarErroQuandoIdadeNegativa" classname="challenge.EstacionamentoTest" time="0.0"/>
@@ -54,7 +54,7 @@
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: challenge.EstacionamentoException: Idade insuficiente
-	at challenge.Motorista$MotoristaBuilder.withIdade(Motorista.java:101)
+	at challenge.Motorista$MotoristaBuilder.withIdade(Motorista.java:102)
 	at challenge.EstacionamentoTest.deveRetornarErroQuandoMotoristaNaoTemNome(EstacionamentoTest.java:32)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -112,7 +112,7 @@ Caused by: challenge.EstacionamentoException: Idade insuficiente
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: challenge.EstacionamentoException: Idade insuficiente
-	at challenge.Motorista$MotoristaBuilder.withIdade(Motorista.java:101)
+	at challenge.Motorista$MotoristaBuilder.withIdade(Motorista.java:102)
 	at challenge.EstacionamentoTest.deveRetornarErroQuandoMotoristaNaoTemHabilitacao(EstacionamentoTest.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -127,7 +127,41 @@ Caused by: challenge.EstacionamentoException: Idade insuficiente
 </failure>
   </testcase>
   <testcase name="naoDeveUltrapassarEstacionamento" classname="challenge.EstacionamentoTest" time="0.001"/>
-  <testcase name="deveRetornarErroQuandoNaoTemPlaca" classname="challenge.EstacionamentoTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="deveRetornarErroQuandoNaoTemPlaca" classname="challenge.EstacionamentoTest" time="0.001"/>
+  <system-out><![CDATA[Ada6031231
+Motorista 1603-5042397921043839115
+Motorista 2603-5390281643553133737
+Motorista 36032618016107690120414
+Motorista 46038275585971241495971
+Motorista 5603-9049128798465804843
+Motorista 6603-1147884977518745001
+Motorista 76037368579099790683537
+Motorista 8603-676569298463873388
+Motorista 96035204424227858036660
+Motorista 106037923946348003991010
+Ada6031231
+Motorista 1203-4614762862542398752
+Motorista 2203-5133392695420721645
+Motorista 3203-4578627366832958495
+Motorista 42031931259583153874377
+Motorista 5203-1726500967383531615
+Motorista 62038210716888032787167
+Motorista 7203-7157586986268968107
+Motorista 8203-5652649536701799180
+Motorista 92037755139939834064641
+Motorista 102034726443749907738584
+Ada2031231
+Ada2031231
+Motorista 1203-4633858658515571567
+Motorista 2203-4295476409772207394
+Motorista 32031668180776790421569
+Motorista 42037222340115326055468
+Motorista 5203-8201071968338595783
+Motorista 62033876488398647025565
+Motorista 7203-5774851636540699049
+Motorista 8203-4731515381689259813
+Motorista 92034595014359998626493
+Motorista 102033600431287980053346
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

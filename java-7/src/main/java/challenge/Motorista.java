@@ -86,6 +86,7 @@ public class Motorista {
         private int pontos;
 
         private String habilitacao;
+        
 
         private MotoristaBuilder() {
         }
@@ -117,7 +118,7 @@ public class Motorista {
         }
 
 
-        public Motorista build() {
+        public Motorista build() throws NullPointerException {
             return new Motorista(nome, idade, pontos, habilitacao);
         }
     }

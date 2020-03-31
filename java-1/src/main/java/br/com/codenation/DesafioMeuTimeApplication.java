@@ -134,6 +134,7 @@ public class DesafioMeuTimeApplication implements MeuTimeInterface {
                     maisVelho = jogador.getId();
                 } else if (jogador.getDataNascimento().isEqual(maior)) {
                     maisVelho = Math.min(maisVelho, jogador.getId());
+                    maior = jogador.getDataNascimento();
                 }
             }
             
@@ -198,9 +199,11 @@ public class DesafioMeuTimeApplication implements MeuTimeInterface {
     }
 
     @Desafio("buscarCorCamisaTimeDeFora")
-    public String buscarCorCamisaTimeDeFora(Long timeDaCasa, Long timeDeFora) {
+    public String buscarCorCamisaTimeDeFora(Long timeDaCasa, Long timeDeFora) throws TimeNaoEncontradoException {
         Time casa = getTimeById(timeDaCasa);
         Time fora = getTimeById(timeDeFora);
+        
+        if(casa == null || fora == null) throw new TimeNaoEncontradoException();
 
         if (casa.getCorUniformePrincipal().equals(fora.getCorUniformePrincipal())) {
             return fora.getCorUniformeSecundario();
@@ -220,7 +223,7 @@ public class DesafioMeuTimeApplication implements MeuTimeInterface {
     }
 
     private Jogador getJogadorById(Long id) {
-        for (Jogador jogador : jogadores) {
+        for (Jogador jogador : jogadores) { 
             if (jogador.getId().equals(id)) {
                 return jogador;
             }
