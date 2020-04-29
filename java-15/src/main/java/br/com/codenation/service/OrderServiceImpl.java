@@ -1,5 +1,8 @@
 package br.com.codenation.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -18,7 +21,14 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	public Double calculateOrderValue(List<OrderItem> items) {
-		return null;
+		Double soma = Double.valueOf(0);
+		for(OrderItem item: items) {
+			if(productRepository.findById(item.getProductId()).get() == null) continue;
+			Product product = productRepository.findById(item.getProductId()).get();
+			if(product.getIsSale()) soma+= (product.getValue()*item.getQuantity()*.8);
+			else soma+= (product.getValue()*item.getQuantity());
+		}
+		return soma;
 	}
 
 	/**
@@ -26,7 +36,13 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	public Set<Product> findProductsById(List<Long> ids) {
-		return null;
+		Set<Product> products = new HashSet<Product>();
+		for(Long id: ids) {
+			if(productRepository.findById(id).get() == null) continue;
+			Product product = productRepository.findById(id).get();
+			products.add(product);
+		}
+		return products;
 	}
 
 	/**
@@ -34,7 +50,11 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	public Double calculateMultipleOrders(List<List<OrderItem>> orders) {
-		return null;
+		Double soma = Double.valueOf(0);
+		for(List<OrderItem> lista: orders) {
+			soma+= calculateOrderValue(lista);
+		}
+		return soma;
 	}
 
 	/**
@@ -42,7 +62,18 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	public Map<Boolean, List<Product>> groupProductsBySale(List<Long> productIds) {
-		return null;
+		Map<Boolean, List<Product>> products = new HashMap<Boolean, List<Product>>();
+		List<Product> isSale = new ArrayList<>();
+		List<Product> isNotSale = new ArrayList<>();
+		for(Long id: productIds) {
+			if(productRepository.findById(id).get() == null) continue;
+			Product product = productRepository.findById(id).get();
+			if(product.getIsSale()) isSale.add(product);
+			else isNotSale.add(product);
+		}
+		products.put(true, isSale);
+		products.put(false, isNotSale);
+		return products;
 	}
 
 }
