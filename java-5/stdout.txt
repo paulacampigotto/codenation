@@ -1,0 +1,16 @@
+> Task :clean
+> Task :generateLombokConfig UP-TO-DATE
+> Task :compileJava
+> Task :processResources
+> Task :classes
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+
+> Task :test
+2020-05-06 20:51:20.874  INFO 24131 --- [       Thread-7] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@c49e2a3: startup date [Wed May 06 20:51:10 BRT 2020]; root of context hierarchy
+2020-05-06 20:51:20.875  INFO 24131 --- [       Thread-9] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@78f60dc7: startup date [Wed May 06 20:51:19 BRT 2020]; root of context hierarchy
+2020-05-06 20:51:20.881  INFO 24131 --- [       Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+BUILD SUCCESSFUL in 15s
+6 actionable tasks: 5 executed, 1 up-to-date
