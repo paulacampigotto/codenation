@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.challenge.entity.Submission;
-import com.challenge.repository.AccelerationRepository;
 import com.challenge.repository.SubmissionRepository;
 import com.challenge.service.interfaces.SubmissionServiceInterface;
 
